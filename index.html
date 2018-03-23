@@ -62,17 +62,28 @@
       <!-- Enter Work Ethic -->
       <form id="formWork">
         <div class="well form-group">
-          <label for="enterWork">What environment do you most enjoy working in?</label>
-          <input type="text" id="enterWork">
+          <p>What environment do you most enjoy working in?</p>
+          <input type="radio" id="solo" value="solo">  I work best independently. I like handling all facets of my projects.
+          <br>
+          <input type="radio" id="smallGroup" value="smallGroup">  I work best with a small team. I like splitting the work with a few coworkers.
+          <br>
+          <input type="radio" id="largeGroup" value="largeGroup">  I work best in a large team. I prefer to focus on a small subsection of a much larger project.
+          <br>
           <button type="submit" class="button">Let's begin!</button>
         </div>
       </form>
       <!-- Enter Preferred format -->
       <form id="formFormat">
         <div class="well form-group">
-          <label for="enterFormat">Do you want to create applications for mobile, desktop, or specialized screens(printers, fitbit, ect.)?</label>
-          <input type="text" id="enterFormat">
-          <button type="submit" class="button">Let's begin!</button>
+          <p>Do you want to create applications for mobile, desktop, or specialized screens(printers, fitbit, ect.)?</p>
+          <select id="enterFormat">
+            <option value="mobile">Mobile</option>
+            <option value="desktop">Desktop</option>
+            <option value="special">Specialized Platforms</option>
+          </select>
+          <br>
+          <br>
+          <button type="submit" class="button">Which track should I take?</button>
         </div>
       </form>
     </div>
