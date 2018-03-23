@@ -1,7 +1,7 @@
 // holds user name
 var name = "";
-// holds string of letters used to determine answer via counter
-var suggestString = "";
+// holds string of letters used to determine answer via counter. begins with a string of letters to enable letter counter function
+var suggestString = "SCJR";
 // holds no and little experience value
 var experience = "";
 // holds large experience value, use to eliminate letters from answer string
@@ -43,9 +43,7 @@ $(document).ready(function() {
         // change value of suggestString to a string consisting of all values from array "temoporary"
         stringHandler[temporary] = $(this).val();
         // converts stringHandler array to a string and assigns value to suggestString
-        suggestString = stringHandler.toString();
-        // // will replace every comma with nothing to create full string without commas
-        // suggestString = suggestString.replace(/,/g, '');
+        suggestString = suggestString + stringHandler.toString();
       });
     } else {
       $(":checkbox:checked").each(function(temporary) {
@@ -80,10 +78,13 @@ $(document).ready(function() {
   $("#formFormat").submit(function(event) {
     suggestString = $('select#enterFormat').val() + suggestString;
     console.log(suggestString);
-    // will determine which letter is most common in suggestString
+    // // will replace every comma with nothing to create full string without commas
+    suggestString = suggestString.replace(/,/g, '');
+    console.log(suggestString);
+    // will determine which letter is most common in suggestString. Does not work when # of character searched for is <1
     characterCounter = suggestString.match(/R/g).length;
     characterCounter = parseInt(characterCounter);
-    // debugger
+    debugger
     if (characterCounter < suggestString.match(/S/g).length) {
       maxCharacter = "S";
       characterCounter = suggestString.match(/S/g).length;
@@ -96,8 +97,6 @@ $(document).ready(function() {
       maxCharacter = "C";
       characterCounter = suggestString.match(/C/g).length;
       characterCounter = parseInt(characterCounter);
-    } else {
-
     }
     $("form#formFormat").slideUp('fast');
     console.log(maxCharacter);
