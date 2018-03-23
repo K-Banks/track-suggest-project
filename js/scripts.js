@@ -9,7 +9,7 @@ var altExperience = "";
 // define stringHandler as an array
 var stringHandler = [];
 // use for final logic, will hold most common letter in suggestString
-var maxCharacter = "";
+var maxCharacter = "R";
 // use for counting characters
 var characterCounter = "";
 
@@ -83,6 +83,7 @@ $(document).ready(function() {
     // will determine which letter is most common in suggestString
     characterCounter = suggestString.match(/R/g).length;
     characterCounter = parseInt(characterCounter);
+    // debugger
     if (characterCounter < suggestString.match(/S/g).length) {
       maxCharacter = "S";
       characterCounter = suggestString.match(/S/g).length;
@@ -91,12 +92,24 @@ $(document).ready(function() {
       maxCharacter = "J";
       characterCounter = suggestString.match(/J/g).length;
       characterCounter = parseInt(characterCounter);
-    } else if (charactercounter < suggestString.match(/C/g).length) {
+    } else if (characterCounter < suggestString.match(/C/g).length) {
       maxCharacter = "C";
       characterCounter = suggestString.match(/C/g).length;
       characterCounter = parseInt(characterCounter);
     } else {
-      maxCharacter = "R";
+
+    }
+    $("form#formFormat").slideUp('fast');
+    console.log(maxCharacter);
+    // logic function for revealing track suggestion
+    if (maxCharacter === "S") {
+      $("div.cssReact").slideDown('fast');
+    } else if (maxCharacter === "C") {
+      $("div.cSharpNet").slideDown('fast');
+    } else if (maxCharacter === "R") {
+      $("div.rubyRails").slideDown('fast');
+    } else if (maxCharacter === "J") {
+      $("div.javaAndroid").slideDown('fast');
     }
     console.log(maxCharacter);
     event.preventDefault();

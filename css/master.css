@@ -1,3 +1,7 @@
 #formExperience, #formFocus, #formWork, #formFormat {
   display: none;
 }
+
+.rubyRails, .javaAndroid, .cssReact, .cSharpNet {
+  display: none;
+}
