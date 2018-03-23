@@ -38,7 +38,7 @@ var experienceElim = function() {
     $("li#priorExp").prepend("<li>"+"CSS"+"</li>");
   }
   if (experienceTrack === 1) {
-    $("div.experienced").show();
+    $(".experienced").show();
   }
   suggestString = suggestString.replace(/,/g, '');
   suggestString = suggestString + "SCJR";
@@ -122,20 +122,21 @@ $(document).ready(function() {
       characterCounter = suggestString.match(/C/g).length;
       characterCounter = parseInt(characterCounter);
     }
-
-    $("div.result").show();
     $("form#formFormat").slideUp('fast');
+    $("div.result").slideDown('fast');
     // logic function for revealing track suggestion
-    if (maxCharacter === "S") {
-      $("div.cssReact").slideDown('fast');
-    } else if (maxCharacter === "C") {
-      $("div.cSharpNet").slideDown('fast');
-    } else if (maxCharacter === "R") {
-      $("div.rubyRails").slideDown('fast');
-    } else if (maxCharacter === "J") {
-      $("div.javaAndroid").slideDown('fast');
+    if (experience !== "largeExp") {
+      $("span.inexperienced").show();
     }
-    $(".restart").show();
+    if (maxCharacter === "S") {
+      $("p.cssReact").slideDown('fast');
+    } else if (maxCharacter === "C") {
+      $("p.cSharpNet").slideDown('fast');
+    } else if (maxCharacter === "R") {
+      $("p.rubyRails").slideDown('fast');
+    } else if (maxCharacter === "J") {
+      $("p.javaAndroid").slideDown('fast');
+    }
     event.preventDefault();
   });
 });

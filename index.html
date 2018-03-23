@@ -9,13 +9,13 @@
     <title>Epicodus Track Suggester</title>
   </head>
   <body>
-    <div class="container">
+    <div class="well container">
       <div class="jumbotron">
         <h1>Epicodus Track Suggester</h1>
         <p>Use this tool to help identify which track would best suit you at Epicodus.</p>
       </div>
       <!-- Enter Name -->
-      <form class="well" id="formName">
+      <form  id="formName">
         <div class="form-group">
           <label for="enterName">Please enter your name:</label>
           <input type="text" id="enterName" placeholder="ex: John">
@@ -23,7 +23,7 @@
         <!-- Enter Boolean Experience -->
         <div class="form-group">
           <p>Please check the description that best fits your experience with programming:</p>
-          <input type="radio" name="generalExp" value="noExp">  I have no experience with programming.
+          <input type="radio" name="generalExp" value="noExp" checked>  I have no experience with programming.
           <br>
           <input type="radio" name="generalExp" value="littleExp">  I have a little experience programming.
           <br>
@@ -34,7 +34,7 @@
       </form>
       <!-- Select Specific Experience -->
       <form id="formExperience">
-        <div class="well form-group">
+        <div class=" form-group">
           <p>Have you worked with any of the following languages? Check all that apply</p>
           <label for="css"><input type="checkbox" id="css" value="S">  CSS</label>
           <br>
@@ -51,9 +51,9 @@
       </form>
       <!-- Enter Front-end or Back-end -->
       <form id="formFocus">
-        <div class="well form-group">
+        <div class=" form-group">
           <p>Select the option that most describes you:</p>
-          <input type="radio" name="focus" value="SR"> I like art, design, and user-oriented experiences. I would like to make websites and apps look aesthetically pleasing and responsive.
+          <input type="radio" name="focus" value="SR" checked> I like art, design, and user-oriented experiences. I would like to make websites and apps look aesthetically pleasing and responsive.
           <br>
           <input type="radio" name="focus" value="RJ"> I want to build my own apps from scratch. Someday I'd like to start my own software company that would rival AirBnB or Instagram.
           <br>
@@ -64,9 +64,9 @@
       </form>
       <!-- Enter Work Ethic -->
       <form id="formWork">
-        <div class="well form-group">
+        <div class=" form-group">
           <p>What environment do you most enjoy working in?</p>
-          <input type="radio" name="work" value="RS">  I work best independently. I like handling all facets of my projects.
+          <input type="radio" name="work" value="RS" checked>  I work best independently. I like handling all facets of my projects.
           <br>
           <input type="radio" name="work" value="RJ">  I work best with a small team. I like splitting the work with a few coworkers.
           <br>
@@ -77,7 +77,7 @@
       </form>
       <!-- Enter Preferred format -->
       <form id="formFormat">
-        <div class="well form-group">
+        <div class=" form-group">
           <p>Do you want to create applications for mobile, desktop, or specialized screens(printers, fitbit, ect.)?</p>
           <select id="enterFormat">
             <option value="SRJ">Mobile</option>
@@ -90,28 +90,18 @@
         </div>
       </form>
       <div class="results">
-        <div class="well experienced">
-          <p>Since you have experience with:
+        <div class="experienced">
             <ul>
-              <li id="priorExp">Try out this track:</li>
+              <li id="priorExp">Since you have experience with:</li>
             </ul>
-          </p>
         </div>
-        <div class="well rubyRails">
-          <p>You should take the Ruby/Rails track.</p>
-        </div>
-        <div class="well javaAndroid">
-          <p>You should take the Java/Android track.</p>
-        </div>
-        <div class="well cssReact">
-          <p>You should take the CSS/React track.</p>
-        </div>
-        <div class="well cSharpNet">
-          <p>You should take the C#/.NET track.</p>
-        </div>
-        <div>
-          <a href="index.html"><button type="button" class="restart button">Click here to restart</button></a>
-        </div>
+        <p><span class="experienced">Try out this track:</span></p>
+        <p><span class="inexperienced">This track would suit your interests:</span></p>
+        <p class="rubyRails">Ruby/Rails</p>
+        <p class="javaAndroid">Java/Android</p>
+        <p class="cssReact">CSS/React</p>
+        <p class="cSharpNet">C#/.NET</p>
+        <a href="index.html"><button type="button" class="restart button">Click here to restart</button></a>
       </div>
     </div>
   </body>

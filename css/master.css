@@ -1,7 +1,8 @@
-/*#formExperience, #formFocus, #formWork, #formFormat {
+#formExperience, #formFocus, #formWork, #formFormat {
   display: none;
 }
 
-.rubyRails, .javaAndroid, .cssReact, .cSharpNet, .restart, .experienced {
+
+.rubyRails, .javaAndroid, .cssReact, .cSharpNet, .restart, .experienced, .inexperienced {
   display: none;
-}*/
+}
