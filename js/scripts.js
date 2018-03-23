@@ -13,6 +13,33 @@ var maxCharacter = "";
 // use for counting characters
 var characterCounter = "";
 
+// this custom fucntion will remove any track options that a user has significant experience in
+var experienceElim = function() {
+  var experienceTrack = 0;
+  if (altExperience.match(/R/) !== null) {
+    // will replace every comma with nothing to create full string without commas
+    suggestString = suggestString.replace(/R/g, '');
+    experienceTrack = 1;
+  }
+  if (altExperience.match(/J/) !== null) {
+    suggestString = suggestString.replace(/J/g, '');
+    experienceTrack = 1;
+  }
+  if (altExperience.match(/C/) !== null) {
+    suggestString = suggestString.replace(/C/g, '');
+    experienceTrack = 1;
+  }
+  if (altExperience.match(/S/) !== null) {
+    suggestString = suggestString.replace(/S/g, '');
+    experienceTrack = 1;
+  }
+  if (experienceTrack === 1) {
+    $("div.experienced").show();
+  }
+  suggestString = suggestString.replace(/,/g, '');
+  suggestString = suggestString + "SCJR";
+}
+
 $(document).ready(function() {
   // Name and Experience logic
   $("#formName").submit(function(event) {
@@ -22,10 +49,8 @@ $(document).ready(function() {
     } else {
       name = $('input#enterName').val();
     }
-    console.log(name);
     // Experience logic
     experience = $("input:radio[name=generalExp]:checked").val();
-    console.log(experience);
     // Show next question logic (skips question 2 if user has no experience)
     if (experience === "littleExp" || experience === "largeExp") {
       $("form#formExperience").slideDown("fast");
@@ -53,15 +78,11 @@ $(document).ready(function() {
     }
     $("form#formExperience").slideUp('fast');
     $("form#formFocus").slideDown('fast');
-    console.log(suggestString);
-    console.log(stringHandler);
-    console.log(altExperience);
     event.preventDefault();
   });
   // formFocus script
   $("#formFocus").submit(function(event) {
     suggestString = $('input:radio[name=focus]:checked').val() + suggestString;
-    console.log(suggestString);
     $('form#formFocus').slideUp('fast');
     $('form#formWork').slideDown('fast');
     event.preventDefault();
@@ -69,7 +90,6 @@ $(document).ready(function() {
   // formWork script
   $("#formWork").submit(function(event) {
     suggestString = $('input:radio[name=work]:checked').val() + suggestString;
-    console.log(suggestString);
     $('form#formWork').slideUp('fast');
     $('form#formFormat').slideDown('fast');
     event.preventDefault();
@@ -77,34 +97,30 @@ $(document).ready(function() {
   // formFormat script and final suggestion logic
   $("#formFormat").submit(function(event) {
     suggestString = $('select#enterFormat').val() + suggestString;
-    console.log(suggestString);
-    // // will replace every comma with nothing to create full string without commas
-    suggestString = suggestString.replace(/,/g, '');
-    console.log(suggestString);
-    debugger
+    experienceElim();
     characterCounter = suggestString.match(/A/g).length;
     characterCounter = parseInt(characterCounter);
-    console.log(characterCounter);
-    if (characterCounter < suggestString.match(/R/g).length && altExperience.match(/R/) === null) {
+    if (characterCounter < suggestString.match(/R/g).length) {
       // will determine which letter is most common in suggestString. Does not work when # of character searched for is <1
       characterCounter = suggestString.match(/R/g).length;
       characterCounter = parseInt(characterCounter);
       maxCharacter = "R";
-    } else if (characterCounter < suggestString.match(/S/g).length && altExperience.match(/S/) === null) {
+    } else if (characterCounter < suggestString.match(/S/g).length) {
       maxCharacter = "S";
       characterCounter = suggestString.match(/S/g).length;
       characterCounter = parseInt(characterCounter);
-    } else if (characterCounter < suggestString.match(/J/g).length && altExperience.match(/J/) === null) {
+    } else if (characterCounter < suggestString.match(/J/g).length) {
       maxCharacter = "J";
       characterCounter = suggestString.match(/J/g).length;
       characterCounter = parseInt(characterCounter);
-    } else if (characterCounter < suggestString.match(/C/g).length && altExperience.match(/C/) === null) {
+    } else if (characterCounter < suggestString.match(/C/g).length) {
       maxCharacter = "C";
       characterCounter = suggestString.match(/C/g).length;
       characterCounter = parseInt(characterCounter);
     }
+
+    $("div.result").show();
     $("form#formFormat").slideUp('fast');
-    console.log(maxCharacter);
     // logic function for revealing track suggestion
     if (maxCharacter === "S") {
       $("div.cssReact").slideDown('fast');
@@ -115,7 +131,6 @@ $(document).ready(function() {
     } else if (maxCharacter === "J") {
       $("div.javaAndroid").slideDown('fast');
     }
-    console.log(maxCharacter);
     $(".restart").show();
     event.preventDefault();
   });
