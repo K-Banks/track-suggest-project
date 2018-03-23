@@ -20,18 +20,22 @@ var experienceElim = function() {
     // will replace every comma with nothing to create full string without commas
     suggestString = suggestString.replace(/R/g, '');
     experienceTrack = 1;
+    $("li#priorExp").prepend("<li>"+"Ruby"+"</li>");
   }
   if (altExperience.match(/J/) !== null) {
     suggestString = suggestString.replace(/J/g, '');
     experienceTrack = 1;
+    $("li#priorExp").prepend("<li>"+"Java"+"</li>");
   }
   if (altExperience.match(/C/) !== null) {
     suggestString = suggestString.replace(/C/g, '');
     experienceTrack = 1;
+    $("li#priorExp").prepend("<li>"+"C#"+"</li>");
   }
   if (altExperience.match(/S/) !== null) {
     suggestString = suggestString.replace(/S/g, '');
     experienceTrack = 1;
+    $("li#priorExp").prepend("<li>"+"CSS"+"</li>");
   }
   if (experienceTrack === 1) {
     $("div.experienced").show();
