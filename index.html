@@ -6,9 +6,62 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/master.css">
     <meta charset="utf-8">
-    <title></title>
+    <title>Epicodus Track Suggester</title>
   </head>
   <body>
-
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Epicodus Track Suggester</h1>
+        <p>Use this tool to help identify which track would best suit you at Epicodus.</p>
+      </div>
+      <!-- Enter Name -->
+      <form id="formName">
+        <div class="form-group">
+          <label for="enterName">Please enter your name below.</label>
+          <input type="text" id="enterName" placeholder="John">
+          <button type="submit" class="button">Let's begin!</button>
+        </div>
+      </form>
+      <!-- Enter Boolean Experience -->
+      <form id="formGeneralExp">
+        <div class="form-group">
+          <label for="enterGeneralExp">Have you had any previous experience with coding?</label>
+          <input type="text" id="enterGeneralExp">
+          <button type="submit" class="button">Let's begin!</button>
+        </div>
+      </form>
+      <!-- Select Specific Experience -->
+      <form id="formExperience">
+        <div class="form-group">
+          <label for="enterExperience">Have you worked with any of the following languages? Check all that apply</label>
+          <input type="text" id="enterExperience">
+          <button type="submit" class="button">Let's begin!</button>
+        </div>
+      </form>
+      <!-- Enter Front-end or Back-end -->
+      <form id="formFocus">
+        <div class="form-group">
+          <label for="enterFocus">Select the option that most interests you</label>
+          <input type="text" id="enterFocus">
+          <button type="submit" class="button">Let's begin!</button>
+        </div>
+      </form>
+      <!-- Enter Work Ethic -->
+      <form id="formWork">
+        <div class="form-group">
+          <label for="enterWork">What environment do you enjoy working in?</label>
+          <input type="text" id="enterWork">
+          <button type="submit" class="button">Let's begin!</button>
+        </div>
+      </form>
+      <!-- Enter Preferred format -->
+      <form id="formFormat">
+        <div class="form-group">
+          <label for="enterFormat">Do you want to create applications for mobile, desktop, or specialized screens(printers, fitbit, ect.)?</label>
+          <input type="text" id="enterFormat">
+          <button type="submit" class="button">Let's begin!</button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
