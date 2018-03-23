@@ -7,7 +7,7 @@ var experience = "";
   // holds large experience value, use to eliminate letters from answer string
 var altExperience = "";
   // define stringHandler as an array
-  var stringHandler = [];
+var stringHandler = [];
 
 $(document).ready(function() {
   // Name and Experience logic
@@ -49,21 +49,33 @@ $(document).ready(function() {
         altExperience = stringHandler.toString();
       });
     }
+    $("form#formExperience").slideUp('fast');
+    $("form#formFocus").slideDown('fast');
     console.log(suggestString);
     console.log(stringHandler);
     console.log(altExperience);
     event.preventDefault();
   });
-
+  // formFocus script
   $("#formFocus").submit(function(event) {
+    suggestString = $('input:radio[name=focus]:checked').val() + suggestString;
+    console.log(suggestString);
+    $('form#formFocus').slideUp('fast');
+    $('form#formWork').slideDown('fast');
     event.preventDefault();
   });
-
+  // formWork script
   $("#formWork").submit(function(event) {
+    suggestString = $('input:radio[name=work]:checked').val() + suggestString;
+    console.log(suggestString);
+    $('form#formWork').slideUp('fast');
+    $('form#formFormat').slideDown('fast');
     event.preventDefault();
   });
-
+  // formFormat script and final suggestion logic
   $("#formFormat").submit(function(event) {
+    suggestString = $('select#enterFormat').val() + suggestString;
+    console.log(suggestString);
     event.preventDefault();
   });
 });
