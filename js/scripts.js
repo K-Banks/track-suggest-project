@@ -32,10 +32,25 @@ $(document).ready(function() {
   // Specific Experience logic
   $("#formExperience").submit(function(event) {
     if (experience === 'littleExp') {
-
+      // define suggestString as an index
+      suggestString = [];
+      // pull each value for checked boxes and compile into index called "temporary"
+      $(":checkbox:checked").each(function(temporary) {
+        // change value of suggestString to a string consisting of all values from index "temoporary"
+        suggestString[temporary] = $(this).val();
+        debugger
+        var stringHandler = "";
+        stringHandler = String.valueof(suggestString);
+      });
     } else {
-
+      altExperience = [];
+      $(":checkbox:checked").each(function(temporary) {
+        altExperience[temporary] = $(this).val();
+      });
     }
+    console.log(suggestString);
+    console.log(stringHandler);
+    console.log(altExperience);
     event.preventDefault();
   });
 
