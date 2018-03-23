@@ -140,6 +140,7 @@ $(document).ready(function() {
     } else if (maxCharacter === "J") {
       $("p.javaAndroid").slideDown('slow');
     }
+    $("button.restart").show();
     event.preventDefault();
   });
 });

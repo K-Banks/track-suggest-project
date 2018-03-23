@@ -37,3 +37,11 @@ input[type=text] {
   margin-left: 30px;
   padding: 10px 10px;
 }
+
+.jumbotron{
+  color: #018688;
+}
+
+.well {
+ background-color: #83d0ea;
+}
