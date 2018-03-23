@@ -12,7 +12,8 @@
     <div class="well container">
       <div class="jumbotron">
         <h1>Epicodus Track Suggester</h1>
-        <p>Use this tool to help identify which track would best suit you at Epicodus.</p>
+        <p id="headerHide">Use this tool to help identify which track would best suit you at Epicodus.</p>
+        <h5>Hello <span id="namePlace"></span>, let's find the right track for you.</h5>
       </div>
       <!-- Enter Name -->
       <form  id="formName">
@@ -23,11 +24,11 @@
         <!-- Enter Boolean Experience -->
         <div class="form-group">
           <p>Please check the description that best fits your experience with programming:</p>
-          <input type="radio" name="generalExp" value="noExp" checked>  I have no experience with programming.
+          <input type="radio" name="generalExp" value="noExp" checked><span class="fontStyle">  I have no experience with programming.</span>
           <br>
-          <input type="radio" name="generalExp" value="littleExp">  I have a little experience programming.
+          <input type="radio" name="generalExp" value="littleExp"><span class="fontStyle">  I have a little experience programming.</span>
           <br>
-          <input type="radio" name="generalExp" value="largeExp"> I program a lot for work or for personal projects.
+          <input type="radio" name="generalExp" value="largeExp"><span class="fontStyle"> I program a lot for work or for personal projects.</span>
           <br>
           <button type="submit" class="button">Let's begin!</button>
         </div>
@@ -36,15 +37,15 @@
       <form id="formExperience">
         <div class=" form-group">
           <p>Have you worked with any of the following languages? Check all that apply</p>
-          <label for="css"><input type="checkbox" id="css" value="S">  CSS</label>
+          <label for="css"><input type="checkbox" id="css" value="S"><span class="fontStyle">  CSS</span></label>
           <br>
-          <label for="react"><input type="checkbox" id="react" value="SJ">  React</label>
+          <label for="react"><input type="checkbox" id="react" value="SJ"><span class="fontStyle">  React</span></label>
           <br>
-          <label for="java"><input type="checkbox" id="java" value="J">  Java</label>
+          <label for="java"><input type="checkbox" id="java" value="J"><span class="fontStyle">  Java</span></label>
           <br>
-          <label for="ruby"><input type="checkbox" id="ruby" value="R">  Ruby</label>
+          <label for="ruby"><input type="checkbox" id="ruby" value="R"><span class="fontStyle">  Ruby</span></label>
           <br>
-          <label for="cSharp"><input type="checkbox" id="cSharp" value="C">  C# (C Sharp)</label>
+          <label for="cSharp"><input type="checkbox" id="cSharp" value="C"><span class="fontStyle">  C# (C Sharp)</span></label>
           <br>
           <button type="submit" class="button">Continue</button>
         </div>
@@ -53,11 +54,11 @@
       <form id="formFocus">
         <div class=" form-group">
           <p>Select the option that most describes you:</p>
-          <input type="radio" name="focus" value="SR" checked> I like art, design, and user-oriented experiences. I would like to make websites and apps look aesthetically pleasing and responsive.
+          <input type="radio" name="focus" value="SR" checked><span class="fontStyle"> I like art, design, and user-oriented experiences. I would like to make websites and apps look aesthetically pleasing and responsive.</span>
           <br>
-          <input type="radio" name="focus" value="RJ"> I want to build my own apps from scratch. Someday I'd like to start my own software company that would rival AirBnB or Instagram.
+          <input type="radio" name="focus" value="RJ"><span class="fontStyle"> I want to build my own apps from scratch. Someday I'd like to start my own software company that would rival AirBnB or Instagram.</span>
           <br>
-          <input type="radio" name="focus" value="CJ"> I love solving logic puzzles and troubleshooting problems. I'd like to learn what happens in code that the user never sees.
+          <input type="radio" name="focus" value="CJ"><span class="fontStyle"> I love solving logic puzzles and troubleshooting problems. I'd like to learn what happens in code that the user never sees.</span>
           <br>
           <button type="submit" class="button">Continue</button>
         </div>
@@ -66,11 +67,11 @@
       <form id="formWork">
         <div class=" form-group">
           <p>What environment do you most enjoy working in?</p>
-          <input type="radio" name="work" value="RS" checked>  I work best independently. I like handling all facets of my projects.
+          <input type="radio" name="work" value="RS" checked><span class="fontStyle">  I work best independently. I like handling all facets of my projects.</span>
           <br>
-          <input type="radio" name="work" value="RJ">  I work best with a small team. I like splitting the work with a few coworkers.
+          <input type="radio" name="work" value="RJ"><span class="fontStyle">  I work best with a small team. I like splitting the work with a few coworkers.</span>
           <br>
-          <input type="radio" name="work" value="JC">  I work best in a large team. I prefer to focus on a small subsection of a much larger project.
+          <input type="radio" name="work" value="JC"><span class="fontStyle">  I work best in a large team. I prefer to focus on a small subsection of a much larger project.</span>
           <br>
           <button type="submit" class="button">Continue</button>
         </div>
@@ -78,7 +79,7 @@
       <!-- Enter Preferred format -->
       <form id="formFormat">
         <div class=" form-group">
-          <p>Do you want to create applications for mobile, desktop, or specialized screens(printers, fitbit, ect.)?</p>
+          <p>Do you want to create applications for mobile, desktop, or specialized platforms (printers, fitbit, ect.)?</p>
           <select id="enterFormat">
             <option value="SRJ">Mobile</option>
             <option value="SRJC">Desktop</option>

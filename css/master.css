@@ -2,7 +2,38 @@
   display: none;
 }
 
+h5 {
+  display: none;
+  font-size: 30px;
+  font-weight: bold;
+}
 
 .rubyRails, .javaAndroid, .cssReact, .cSharpNet, .restart, .experienced, .inexperienced {
   display: none;
+}
+
+p {
+  font-size: 25px;
+}
+
+label {
+  font-size: 20px;
+}
+
+.fontStyle {
+  font-size: 20px;
+}
+
+input[type=radio] {
+  margin: 2.5% auto;
+  margin-left: 3%;
+}
+
+button {
+  margin: 5%;
+}
+
+input[type=text] {
+  margin-left: 30px;
+  padding: 10px 10px;
 }

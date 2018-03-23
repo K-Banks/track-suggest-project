@@ -48,20 +48,23 @@ $(document).ready(function() {
   // Name and Experience logic
   $("#formName").submit(function(event) {
     // Name logic
-    if (name === "") {
+    if ($('input#enterName').val() === "") {
       name = "anonymous";
     } else {
       name = $('input#enterName').val();
     }
+    $("span#namePlace").append(name);
+    $("h5").slideDown('slow');
+    $("#headerHide").slideUp('slow');
     // Experience logic
     experience = $("input:radio[name=generalExp]:checked").val();
     // Show next question logic (skips question 2 if user has no experience)
     if (experience === "littleExp" || experience === "largeExp") {
-      $("form#formExperience").slideDown("fast");
+      $("form#formExperience").slideDown("slow");
     } else {
-      $("form#formFocus").slideDown("fast");
+      $("form#formFocus").slideDown("slow");
     }
-    $("form#formName").slideUp("fast");
+    $("form#formName").slideUp("slow");
     event.preventDefault();
   });
   // Specific Experience logic
@@ -80,22 +83,22 @@ $(document).ready(function() {
         altExperience = stringHandler.toString();
       });
     }
-    $("form#formExperience").slideUp('fast');
-    $("form#formFocus").slideDown('fast');
+    $("form#formExperience").slideUp('slow');
+    $("form#formFocus").slideDown('slow');
     event.preventDefault();
   });
   // formFocus script
   $("#formFocus").submit(function(event) {
     suggestString = $('input:radio[name=focus]:checked').val() + suggestString;
-    $('form#formFocus').slideUp('fast');
-    $('form#formWork').slideDown('fast');
+    $('form#formFocus').slideUp('slow');
+    $('form#formWork').slideDown('slow');
     event.preventDefault();
   });
   // formWork script
   $("#formWork").submit(function(event) {
     suggestString = $('input:radio[name=work]:checked').val() + suggestString;
-    $('form#formWork').slideUp('fast');
-    $('form#formFormat').slideDown('fast');
+    $('form#formWork').slideUp('slow');
+    $('form#formFormat').slideDown('slow');
     event.preventDefault();
   });
   // formFormat script and final suggestion logic
@@ -122,20 +125,20 @@ $(document).ready(function() {
       characterCounter = suggestString.match(/C/g).length;
       characterCounter = parseInt(characterCounter);
     }
-    $("form#formFormat").slideUp('fast');
-    $("div.result").slideDown('fast');
+    $("form#formFormat").slideUp('slow');
+    $("div.result").slideDown('slow');
     // logic function for revealing track suggestion
     if (experience !== "largeExp") {
       $("span.inexperienced").show();
     }
     if (maxCharacter === "S") {
-      $("p.cssReact").slideDown('fast');
+      $("p.cssReact").slideDown('slow');
     } else if (maxCharacter === "C") {
-      $("p.cSharpNet").slideDown('fast');
+      $("p.cSharpNet").slideDown('slow');
     } else if (maxCharacter === "R") {
-      $("p.rubyRails").slideDown('fast');
+      $("p.rubyRails").slideDown('slow');
     } else if (maxCharacter === "J") {
-      $("p.javaAndroid").slideDown('fast');
+      $("p.javaAndroid").slideDown('slow');
     }
     event.preventDefault();
   });
