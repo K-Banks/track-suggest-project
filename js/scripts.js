@@ -1,13 +1,17 @@
 // holds user name
 var name = "";
-  // holds string of letters used to determine answer via counter
+// holds string of letters used to determine answer via counter
 var suggestString = "";
-  // holds no and little experience value
+// holds no and little experience value
 var experience = "";
-  // holds large experience value, use to eliminate letters from answer string
+// holds large experience value, use to eliminate letters from answer string
 var altExperience = "";
-  // define stringHandler as an array
+// define stringHandler as an array
 var stringHandler = [];
+// use for final logic, will hold most common letter in suggestString
+var maxCharacter = "";
+// use for counting characters
+var characterCounter = "";
 
 $(document).ready(function() {
   // Name and Experience logic
@@ -76,6 +80,25 @@ $(document).ready(function() {
   $("#formFormat").submit(function(event) {
     suggestString = $('select#enterFormat').val() + suggestString;
     console.log(suggestString);
+    // will determine which letter is most common in suggestString
+    characterCounter = suggestString.match(/R/g).length;
+    characterCounter = parseInt(characterCounter);
+    if (characterCounter < suggestString.match(/S/g).length) {
+      maxCharacter = "S";
+      characterCounter = suggestString.match(/S/g).length;
+      characterCounter = parseInt(characterCounter);
+    } else if (characterCounter < suggestString.match(/J/g).length) {
+      maxCharacter = "J";
+      characterCounter = suggestString.match(/J/g).length;
+      characterCounter = parseInt(characterCounter);
+    } else if (charactercounter < suggestString.match(/C/g).length) {
+      maxCharacter = "C";
+      characterCounter = suggestString.match(/C/g).length;
+      characterCounter = parseInt(characterCounter);
+    } else {
+      maxCharacter = "R";
+    }
+    console.log(maxCharacter);
     event.preventDefault();
   });
 });
