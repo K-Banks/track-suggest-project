@@ -111,6 +111,7 @@ $(document).ready(function() {
       $("div.javaAndroid").slideDown('fast');
     }
     console.log(maxCharacter);
+    $(".restart").show();
     event.preventDefault();
   });
 });
