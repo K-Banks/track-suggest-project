@@ -15,15 +15,16 @@
         <p>Use this tool to help identify which track would best suit you at Epicodus.</p>
       </div>
       <!-- Enter Name -->
-      <form id="formName">
-        <div class="well form-group">
-          <label for="enterName">Please enter your name below.</label>
-          <input type="text" id="enterName" placeholder="John">
+      <form class="well" id="formName">
+        <div class="form-group">
+          <label for="enterName">Please enter your name:</label>
+          <input type="text" id="enterName" placeholder="ex: John">
         </div>
         <!-- Enter Boolean Experience -->
-        <div class="well form-group">
-          <label for="enterGeneralExp">I have experience with programming: <br>(check box if true)</label>
-          <input type="checkbox" id="enterGeneralExp">
+        <div class="form-group">
+          <p>Please check the box if:</p>
+          <label for="enterGeneralExp"><input type="checkbox" id="enterGeneralExp">  I have experience with programming.</label>
+          <br>
           <button type="submit" class="button">Let's begin!</button>
         </div>
       </form>
@@ -31,22 +32,17 @@
       <form id="formExperience">
         <div class="well form-group">
           <p>Have you worked with any of the following languages? Check all that apply</p>
-          <label for="css">CSS</label>
-          <input type="checkbox" id="css">
+          <label for="css"><input type="checkbox" id="css">  CSS</label>
           <br>
-          <label for="react">React</label>
-          <input type="checkbox" id="react">
+          <label for="react"><input type="checkbox" id="react">  React</label>
           <br>
-          <label for="java">Java</label>
-          <input type="checkbox" id="java">
+          <label for="java"><input type="checkbox" id="java">  Java</label>
           <br>
-          <label for="ruby">Ruby</label>
-          <input type="checkbox" id="ruby">
+          <label for="ruby"><input type="checkbox" id="ruby">  Ruby</label>
           <br>
-          <label for="cSharp">C# (C Sharp)</label>
-          <input type="checkbox" id="cSharp">
+          <label for="cSharp"><input type="checkbox" id="cSharp">  C# (C Sharp)</label>
           <br>
-          <button type="submit" class="button">Let's begin!</button>
+          <button type="submit" class="button">Continue</button>
         </div>
       </form>
       <!-- Enter Front-end or Back-end -->
@@ -56,20 +52,20 @@
           <label for="artsy"><input type="checkbox" id="artsy">  I like art, design, and user-oriented experiences. I would like to make websites and apps look aesthetically pleasing and responsive.</label>
           <label for="fullDev"><input type="checkbox" id="fullDev">  I want to build my own apps from scratch. Someday I'd like to start my own software company that would rival AirBnB or Instagram.</label>
           <label for="backEnd"><input type="checkbox" id="backEnd">  I love solving logic puzzles and troubleshooting problems. I'd like to learn what happens in code that the user never sees.</label>
-          <button type="submit" class="button">Let's begin!</button>
+          <button type="submit" class="button">Continue</button>
         </div>
       </form>
       <!-- Enter Work Ethic -->
       <form id="formWork">
         <div class="well form-group">
           <p>What environment do you most enjoy working in?</p>
-          <input type="radio" id="solo" value="solo">  I work best independently. I like handling all facets of my projects.
+          <input type="radio" name="work" value="solo">  I work best independently. I like handling all facets of my projects.
           <br>
-          <input type="radio" id="smallGroup" value="smallGroup">  I work best with a small team. I like splitting the work with a few coworkers.
+          <input type="radio" name="work" value="smallGroup">  I work best with a small team. I like splitting the work with a few coworkers.
           <br>
-          <input type="radio" id="largeGroup" value="largeGroup">  I work best in a large team. I prefer to focus on a small subsection of a much larger project.
+          <input type="radio" name="work" value="largeGroup">  I work best in a large team. I prefer to focus on a small subsection of a much larger project.
           <br>
-          <button type="submit" class="button">Let's begin!</button>
+          <button type="submit" class="button">Continue</button>
         </div>
       </form>
       <!-- Enter Preferred format -->
