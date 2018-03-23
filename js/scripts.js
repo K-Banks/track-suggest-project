@@ -1,7 +1,7 @@
 // holds user name
 var name = "";
 // holds string of letters used to determine answer via counter. begins with a string of letters to enable letter counter function
-var suggestString = "SCJR";
+var suggestString = "ASCJR";
 // holds no and little experience value
 var experience = "";
 // holds large experience value, use to eliminate letters from answer string
@@ -9,7 +9,7 @@ var altExperience = "";
 // define stringHandler as an array
 var stringHandler = [];
 // use for final logic, will hold most common letter in suggestString
-var maxCharacter = "R";
+var maxCharacter = "";
 // use for counting characters
 var characterCounter = "";
 
@@ -81,19 +81,24 @@ $(document).ready(function() {
     // // will replace every comma with nothing to create full string without commas
     suggestString = suggestString.replace(/,/g, '');
     console.log(suggestString);
-    // will determine which letter is most common in suggestString. Does not work when # of character searched for is <1
-    characterCounter = suggestString.match(/R/g).length;
-    characterCounter = parseInt(characterCounter);
     debugger
-    if (characterCounter < suggestString.match(/S/g).length) {
+    characterCounter = suggestString.match(/A/g).length;
+    characterCounter = parseInt(characterCounter);
+    console.log(characterCounter);
+    if (characterCounter < suggestString.match(/R/g).length && altExperience.match(/R/) === null) {
+      // will determine which letter is most common in suggestString. Does not work when # of character searched for is <1
+      characterCounter = suggestString.match(/R/g).length;
+      characterCounter = parseInt(characterCounter);
+      maxCharacter = "R";
+    } else if (characterCounter < suggestString.match(/S/g).length && altExperience.match(/S/) === null) {
       maxCharacter = "S";
       characterCounter = suggestString.match(/S/g).length;
       characterCounter = parseInt(characterCounter);
-    } else if (characterCounter < suggestString.match(/J/g).length) {
+    } else if (characterCounter < suggestString.match(/J/g).length && altExperience.match(/J/) === null) {
       maxCharacter = "J";
       characterCounter = suggestString.match(/J/g).length;
       characterCounter = parseInt(characterCounter);
-    } else if (characterCounter < suggestString.match(/C/g).length) {
+    } else if (characterCounter < suggestString.match(/C/g).length && altExperience.match(/C/) === null) {
       maxCharacter = "C";
       characterCounter = suggestString.match(/C/g).length;
       characterCounter = parseInt(characterCounter);
