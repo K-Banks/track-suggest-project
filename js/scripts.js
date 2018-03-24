@@ -20,22 +20,22 @@ var experienceElim = function() {
     // will replace every comma with nothing to create full string without commas
     suggestString = suggestString.replace(/R/g, '');
     experienceTrack = 1;
-    $("li#priorExp").prepend("<li>"+"Ruby"+"</li>");
+    $("li#priorExp").append("<li>"+"Ruby"+"</li>");
   }
   if (altExperience.match(/J/) !== null) {
     suggestString = suggestString.replace(/J/g, '');
     experienceTrack = 1;
-    $("li#priorExp").prepend("<li>"+"Java"+"</li>");
+    $("li#priorExp").append("<li>"+"Java"+"</li>");
   }
   if (altExperience.match(/C/) !== null) {
     suggestString = suggestString.replace(/C/g, '');
     experienceTrack = 1;
-    $("li#priorExp").prepend("<li>"+"C#"+"</li>");
+    $("li#priorExp").append("<li>"+"C#"+"</li>");
   }
   if (altExperience.match(/S/) !== null) {
     suggestString = suggestString.replace(/S/g, '');
     experienceTrack = 1;
-    $("li#priorExp").prepend("<li>"+"CSS"+"</li>");
+    $("li#priorExp").append("<li>"+"CSS"+"</li>");
   }
   if (experienceTrack === 1) {
     $(".experienced").show();
@@ -112,15 +112,18 @@ $(document).ready(function() {
       characterCounter = suggestString.match(/R/g).length;
       characterCounter = parseInt(characterCounter);
       maxCharacter = "R";
-    } else if (characterCounter < suggestString.match(/S/g).length) {
+    }
+    if (characterCounter < suggestString.match(/S/g).length) {
       maxCharacter = "S";
       characterCounter = suggestString.match(/S/g).length;
       characterCounter = parseInt(characterCounter);
-    } else if (characterCounter < suggestString.match(/J/g).length) {
+    }
+    if (characterCounter < suggestString.match(/J/g).length) {
       maxCharacter = "J";
       characterCounter = suggestString.match(/J/g).length;
       characterCounter = parseInt(characterCounter);
-    } else if (characterCounter < suggestString.match(/C/g).length) {
+    }
+    if (characterCounter < suggestString.match(/C/g).length) {
       maxCharacter = "C";
       characterCounter = suggestString.match(/C/g).length;
       characterCounter = parseInt(characterCounter);
